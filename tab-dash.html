@@ -1,0 +1,59 @@
+<ion-view view-title="房间">
+
+<ion-nav-buttons side="right">
+        <button class="button" ng-click="addRoom()">
+            添加房间
+        </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="left">
+        <button class="button" ng-click="addRoom()">
+            +设备
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="padding">
+        <!--     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list> -->
+        <!-- <div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">
+        <div class="col col-50" ng-if="$index < images.length">
+            <img ng-src="img/adam.jpg" width="100%" />
+        </div>
+        <div class="col col-50" ng-if="$index + 1 < images.length">
+            <img ng-src="img/adam.jpg" width="100%" />
+        </div>
+        
+    </div> -->
+    <center>
+        <h3>一共{{count}}个房间</h3>
+    
+        <div ng-repeat="(key, items) in devices"><!-- 键值对,这个key就是数据库中的房间号，当然这个参数设置为任何值，items就是数组，对应的设备数组，可以设置为任何值，形式上是LAB_202:Array[1] -->
+             <img ng-src="img/room1.jpg" width="100%" ng-click="showRoom(key,items)"><!-- 这来个参数对应的和前面的一样，当点击时 会将这俩个数据传到设备界面。-->
+                {{key}}
+        </div>
+
+    </center>
+    
+       <!--  <div class="row">
+            <div class="col col-50">
+                <img ng-src="img/room1.jpg" width="100%" ng-click="showRoom(1)">
+                主卧
+            </div>
+            <div class="col col-50">
+                <img ng-src="img/room2.jpg" width="100%" ng-click="showRoom(2)" />
+                书房
+            </div>
+        </div> -->
+       
+    </ion-content>
+</ion-view>
